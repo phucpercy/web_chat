@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 const mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/userdatabase');
+mongoose.connect('mongodb://localhost:27017/userdatabase', {useNewUrlParser: true, useUnifiedTopology:true});
 
 var userdb = mongoose.connection;
 userdb.on('error', console.log.bind(console, "connection error"));
